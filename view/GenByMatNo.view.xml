@@ -1,0 +1,73 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" controllerName="iam.swish.GenQrBarcode.controller.GenByMatNo">
+	<Page showHeader="true" title="{i18n>appGenByMatTitle}" showFooter="true" showNavButton="false" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<form:label>
+									<Label text="{i18n>txtMatNO}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+								</form:label>
+								<form:fields>
+									<Input id="matno" placeholder="{i18n>inpMatNo}" type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" change="onInputChange" valueHelpOnly="false" maxLength="0" valueHelpRequest="callSearchDialog"/>
+								</form:fields>
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+			<ObjectHeader id="ObjHeader" title="{/Maktx}" icon="sap-icon://product" number="{/Matnr}" numberUnit="" numberState="None" showMarkers="false" markFavorite="false" markFlagged="false" backgroundDesign="Transparent" condensed="true">
+				<attributes/>
+				<statuses/>
+			</ObjectHeader>
+			<VBox alignItems="Center" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Center" renderType="Div" visible="true" displayInline="false">
+				<items>
+					<form:Form width="100%" editable="true" visible="true">
+						<form:title/>
+						<form:formContainers>
+							<form:FormContainer visible="true">
+								<form:formElements>
+									<form:FormElement visible="true">
+										<form:label>
+											<Label text="{i18n>txtPrintQty}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+										</form:label>
+										<form:fields>
+											<StepInput id="prtqty" value="1" min="0" max="100" step="1" largerStep="2" displayValuePrecision="0" width="auto" valueState="None" editable="true" enabled="true"/>
+										</form:fields>
+									</form:FormElement>
+								</form:formElements>
+								<form:title/>
+							</form:FormContainer>
+						</form:formContainers>
+						<form:layout>
+							<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+						</form:layout>
+					</form:Form>
+					<Image id="img" visible="false" src="" height="50px" width="200px" densityAware="false"/>
+				</items>
+				<layoutData/>
+			</VBox>
+			<layout:VerticalLayout width="100%" visible="true">
+				<layout:content/>
+			</layout:VerticalLayout>
+		</content>
+		<footer>
+			<Bar design="Auto">
+				<contentLeft/>
+				<contentMiddle/>
+				<contentRight>
+					<Button text="{i18n>btnPrint}" type="Emphasized" icon="sap-icon://print" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+				</contentRight>
+			</Bar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

@@ -1,0 +1,43 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="iam.swish.GenQrBarcode.controller.GenByMatDoc" xmlns:html="http://www.w3.org/1999/xhtml" >
+	<html:style>
+		.sapMText .sapMObjLTitle{ font-size:1.3rem; }
+	</html:style>
+	<Page showHeader="true" title="Material Document" showFooter="true" showNavButton="false" navButtonPress="" navButtonType="Transparent">
+		<content>
+			<List id="list" mode="SingleSelectMaster" width="100%" headerText="" footerText="" backgroundDesign="Solid" showSeparators="All"
+				growing="true" growingThreshold="20" growingScrollToLoad="true" itemPress="_onListItemPress" items="{/MaterialDocumentHeaderSet}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar/>
+				<items>
+					<ObjectListItem intro="" title="{MaterialDocumentNo}" numberUnit="Post Date: { path: 'PostingDate', type: 'sap.ui.model.type.Date'}"
+						numberState="None" type="Navigation" selected="false" showMarkers="false" press="_onObjectListItemPress" number="{SLOC} ({Plant})">
+						<attributes>
+							<ObjectAttribute text="" active="false"/>
+						</attributes>
+						<firstStatus/>
+						<secondStatus/>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Bar design="Auto">
+				<contentLeft>
+					<Button text="" type="Default" icon="sap-icon://filter" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+						press="_onButtonPress"/>
+				</contentLeft>
+				<contentMiddle/>
+				<contentRight/>
+			</Bar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

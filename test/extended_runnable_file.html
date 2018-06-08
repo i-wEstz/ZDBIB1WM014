@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		 
+			<script type="text/javascript">
+				window["sap-ushell-config"] = {
+					defaultRenderer : "fiori2",
+					renderers: {
+						fiori2: {
+							componentData: {
+								config: {
+									search: "hidden"
+								}
+							}
+						}
+					},
+					applications: {
+						"BUILD-prototype": {
+							additionalInformation: "SAPUI5.Component=iam.swish.GenQrBarcode",
+							applicationType: "URL",
+							url: "../",
+							description: "",
+							title: "DBI-B1-WM-014 - Gen QR Barcode"
+						}
+					}
+				};
+			</script>
+			<script src="/test-resources/sap/ushell/bootstrap/sandbox.js" id="sap-ushell-bootstrap"></script>
+        
+        <title>DBI-B1-WM-014 - Gen QR Barcode</title>
+
+		<script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" data-sap-ui-libs="sap.m,sap.ui.layout,sap.ushell" data-sap-ui-theme="sap_belize" data-sap-ui-supportedlanguages="en" data-sap-ui-bindingsyntax="complex" data-sap-ui-compatversion="edge" data-sap-ui-resourceroots="{&quot;iam.swish.GenQrBarcode&quot;:&quot;../&quot;}">
+		</script>
+	
+<script>
+var bRunWithMock = true;
+var sRunWithMock = jQuery.sap.getUriParameters().get('run-with-mock');
+if (sRunWithMock === 'false') {
+bRunWithMock = false;
+}
+if (bRunWithMock) {
+jQuery.sap.require('sap.ui.core.util.MockServer');
+var uri = '/sap/opu/odata/sap/ZSWHB1WM014_SRV/';
+var oMock = new sap.ui.core.util.MockServer({rootUri : uri});
+var _sAppModulePath = "iam.swish.GenQrBarcode/";
+var sMetadataPath = "localService/ZSWHB1WM014_SRV/metadata.xml";
+var sMetadataUrl = jQuery.sap.getModulePath(_sAppModulePath + sMetadataPath.replace(".xml", ""), ".xml");
+oMock.simulate(sMetadataUrl);
+oMock.start();
+	jQuery(document).ready(function($) {  sap.m.MessageToast.show('Running in demo mode with mock data.', {  duration : 4000 });
+});
+}
+</script>
+
+
+
+     
+
+		<script type="text/javascript">
+        		sap.ui.getCore().attachInit(function() {
+        	        //Fake LREP
+        	        jQuery.sap.require("sap.ui.fl.FakeLrepConnector");
+        	        sap.ui.fl.FakeLrepConnector.enableFakeConnector("fakeLRep.json");
+
+        	        
+        			  	
+							// initialize the ushell sandbox component
+							sap.ushell.Container.createRenderer().placeAt("app");
+						
+        			
+                });
+        	</script>
+	</head>
+
+	<body class="sapUiBody" id="app" rootuiarea="">
+	</body>
+
+</html>

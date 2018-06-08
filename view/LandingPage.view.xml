@@ -1,0 +1,47 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="iam.swish.GenQrBarcode.controller.LandingPage">
+		<html:style>
+		.sapMTextLineClamp.sapMTextMaxLine{
+		font-size:1rem; 
+		}
+	</html:style>
+    <Page showHeader="true" title="{i18n>titleMainMenu}" showFooter="false" showNavButton="false">
+        <content>
+            <VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="100%" justifyContent="SpaceAround" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="SpaceAround" renderType="Div" visible="true" displayInline="false">
+                        <items>
+                            <GenericTile header="{i18n>tileGenByMatDoc}" subheader="" frameType="OneByOne" press="_onGenericTilePress">
+                                <tileContent>
+                                    <TileContent footer="{i18n>tilefooterText}" unit="">
+                                        <content>
+                                            <NumericContent value="40" valueColor="Neutral" indicator="None" icon="sap-icon://product"/>
+                                        </content>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+                            <GenericTile header="{i18n>tileGenbyMatNo}" subheader="" frameType="OneByOne" press="_onGenericTilePress1">
+                                <tileContent>
+                                    <TileContent footer="" unit="">
+                                        <content/>
+                                    </TileContent>
+                                </tileContent>
+                            </GenericTile>
+                        </items>
+                        <layoutData/>
+                    </HBox>
+                </items>
+                <layoutData/>
+            </VBox>
+        </content>
+        <footer>
+            <Bar design="Auto">
+                <contentLeft/>
+                <contentMiddle/>
+                <contentRight/>
+            </Bar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

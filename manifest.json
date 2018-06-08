@@ -1,0 +1,164 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "iam.swish.GenQrBarcode",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"dataSources": {
+			"ZSWHB1WM014_SRV": {
+				"uri": "/sap/opu/odata/sap/ZSWHB1WM014_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZSWHB1WM014_SRV/metadata.xml"
+				}
+			}
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "generated.app.view.GenByMatNo",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.m": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "ZSWHB1WM014_SRV"
+			}
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "iam.swish.GenQrBarcode.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"LandingPage"
+					]
+				}
+			},
+			"targets": {
+				"LandingPage": {
+					"controlAggregation": "pages",
+					"viewName": "LandingPage",
+					"viewId": "LandingPage",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"GenByMatDoc": {
+					"controlAggregation": "pages",
+					"viewName": "GenByMatDoc",
+					"viewId": "GenByMatDoc",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"ListMatForGen": {
+					"controlAggregation": "pages",
+					"viewName": "ListMatForGen",
+					"viewId": "ListMatForGen",
+					"viewLevel": 4,
+					"transition": "slide"
+				},
+				"GenByMatNo": {
+					"controlAggregation": "pages",
+					"viewName": "GenByMatNo",
+					"viewId": "GenByMatNo",
+					"viewLevel": 2,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "LandingPage/:context:",
+					"name": "LandingPage",
+					"target": [
+						"LandingPage"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"LandingPage"
+					]
+				},
+				{
+					"pattern": "GenByMatDoc/:context:",
+					"name": "GenByMatDoc",
+					"target": [
+						"GenByMatDoc"
+					]
+				},
+				{
+					"pattern": "ListMatForGen/:context:",
+					"name": "ListMatForGen",
+					"target": [
+						"ListMatForGen"
+					]
+				},
+				{
+					"pattern": "GenByMatNo/:context:",
+					"name": "GenByMatNo",
+					"target": [
+						"GenByMatNo"
+					]
+				}
+			]
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zdbib1wm014",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,39 @@
+<mvc:View xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" controllerName="iam.swish.GenQrBarcode.controller.Dialog1"
+	xmlns="sap.m">
+	<Dialog horizontalScrolling="false" icon="sap-icon://print" showHeader="true" state="Success" stretch="false" title="{i18n>titlePrintConf}"
+		type="Standard" verticalScrolling="false">
+		<content>
+			<form:Form width="100%" editable="true" visible="true">
+				<form:title/>
+				<form:formContainers>
+					<form:FormContainer visible="true">
+						<form:formElements>
+							<form:FormElement visible="true">
+								<!--<form:label>-->
+								<!--    <Label text="Header Text" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>-->
+								<!--</form:label>-->
+								<!--<form:fields>-->
+								<Text wrapping="None" text="{i18n>txtPrintConf}" textAlign="Center" visible="true"/>
+								<!--</form:fields>-->
+							</form:FormElement>
+						</form:formElements>
+						<form:title/>
+					</form:FormContainer>
+				</form:formContainers>
+				<form:layout>
+					<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+				</form:layout>
+			</form:Form>
+		</content>
+		<beginButton/>
+		<buttons>
+			<Button text="{i18n>btnOK}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress"/>
+			<Button text="{i18n>btnCancel}" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"
+				press="_onButtonPress1"/>
+		</buttons>
+		<customHeader/>
+		<endButton/>
+		<subHeader/>
+	</Dialog>
+</mvc:View>

@@ -1,0 +1,105 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSWHB1WM014_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="MaterialDocumentHeader" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaterialDocumentNo"/>
+                    <PropertyRef Name="MaterialDocumentYear"/>
+                </Key>
+                <Property Name="MaterialDocumentNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Material Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialDocumentYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Mat. Doc. Year" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PostingDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Posting Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DocumentDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Document Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="EventType" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Trans./Ev. Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DocumentType" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Document type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MoveToBinIndicator" Type="Edm.Boolean" sap:unicode="false" sap:label="Move To Storage bin" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DocumentRef" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Document Ref." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="DocumentRefType" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Document Ref.Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="MaterialDocumentNavigation" Relationship="ZSWHB1WM014_SRV.MaterialDocumentAssociation" FromRole="FromRole_MaterialDocumentAssociation" ToRole="ToRole_MaterialDocumentAssociation"/>
+            </EntityType>
+            <EntityType Name="MaterialDocumentItem" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaterialDocumentNo"/>
+                    <PropertyRef Name="MaterialDocumentYear"/>
+                    <PropertyRef Name="ItemNo"/>
+                </Key>
+                <Property Name="MaterialDocumentNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Material Doc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialDocumentYear" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Mat. Doc. Year" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ItemNo" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Mat. Doc.Item" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MovementType" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Movement type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MaterialNumber" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Sloc" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Stor. location" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="BatchNumber" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="StockType" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Stock Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QuantityBaseUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BaseUnit" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Base Unit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="QuantityEntryUnit" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Quantity in UnE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EntryUnit" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Unit of Entry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+            </EntityType>
+            <EntityType Name="MaterialInfo" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                    <PropertyRef Name="Charg"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Charg" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="MaterialImage" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaterialNumber"/>
+                </Key>
+                <Property Name="MaterialNumber" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileName" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FileContent" Type="Edm.Binary" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MimeType" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="MIME Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="IdentityLabel" m:HasStream="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MaterialNumber"/>
+                    <PropertyRef Name="BatchNumber"/>
+                </Key>
+                <Property Name="MaterialNumber" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BatchNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Batch" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filename" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="File Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Filecontent" Type="Edm.Binary" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mimetype" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="MIME Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="MaterialDocumentAssociation" sap:content-version="1">
+                <End Type="ZSWHB1WM014_SRV.MaterialDocumentHeader" Multiplicity="1" Role="FromRole_MaterialDocumentAssociation"/>
+                <End Type="ZSWHB1WM014_SRV.MaterialDocumentItem" Multiplicity="*" Role="ToRole_MaterialDocumentAssociation"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_MaterialDocumentAssociation">
+                        <PropertyRef Name="MaterialDocumentNo"/>
+                        <PropertyRef Name="MaterialDocumentYear"/>
+                    </Principal>
+                    <Dependent Role="ToRole_MaterialDocumentAssociation">
+                        <PropertyRef Name="MaterialDocumentNo"/>
+                        <PropertyRef Name="MaterialDocumentYear"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZSWHB1WM014_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="MaterialDocumentHeaderSet" EntityType="ZSWHB1WM014_SRV.MaterialDocumentHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaterialDocumentItemSet" EntityType="ZSWHB1WM014_SRV.MaterialDocumentItem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaterialInfoSet" EntityType="ZSWHB1WM014_SRV.MaterialInfo" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaterialImageSet" EntityType="ZSWHB1WM014_SRV.MaterialImage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="IdentityLabelSet" EntityType="ZSWHB1WM014_SRV.IdentityLabel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="MaterialDocumentAssociationSet" Association="ZSWHB1WM014_SRV.MaterialDocumentAssociation" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="MaterialDocumentHeaderSet" Role="FromRole_MaterialDocumentAssociation"/>
+                    <End EntitySet="MaterialDocumentItemSet" Role="ToRole_MaterialDocumentAssociation"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSWHB1WM014_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSWHB1WM014_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

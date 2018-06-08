@@ -1,0 +1,40 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" controllerName="iam.swish.GenQrBarcode.controller.GenByMatNo">
+    <Page showHeader="true" title="Generate By Material Number" showFooter="true" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <form:Form width="100%" editable="true" visible="true">
+                <form:title/>
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Material No" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="true" enabled="true" visible="true" width="auto" valueHelpOnly="false" maxLength="0"/>
+                                    <Button text="" type="Default" icon="sap-icon://bar-code" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <footer>
+            <Bar design="Auto">
+                <contentLeft/>
+                <contentMiddle/>
+                <contentRight>
+                    <Button text="Print" type="Emphasized" icon="sap-icon://print" iconFirst="true" width="100%" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                </contentRight>
+            </Bar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

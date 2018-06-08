@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="iam.swish.GenQrBarcode.controller.Dialog2" xmlns="sap.m">
+    <Dialog horizontalScrolling="false" showHeader="true" state="None" stretch="false" title="Print Confirmation" type="Standard" verticalScrolling="false">
+        <content>
+            <HBox alignItems="Stretch" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <Label text="Mat. :" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                    <ObjectIdentifier title="000-XXX-000" text="Mat. Desc" titleActive="true" visible="true"/>
+                </items>
+                <layoutData/>
+            </HBox>
+            <HBox alignItems="Center" direction="Row" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div" visible="true" displayInline="false">
+                <items>
+                    <Label text="Qty. :" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                    <StepInput value="1" min="1" max="9999999" step="1" largerStep="2" displayValuePrecision="0" width="80%" valueState="None" editable="true" enabled="true"/>
+                </items>
+                <layoutData/>
+            </HBox>
+        </content>
+        <beginButton/>
+        <buttons>
+            <Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+            <Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress1"/>
+        </buttons>
+        <customHeader/>
+        <endButton/>
+        <subHeader/>
+    </Dialog>
+</mvc:View>
